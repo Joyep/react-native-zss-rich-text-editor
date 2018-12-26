@@ -1077,11 +1077,11 @@
 				var editorHeight = zss_editor.editorHeight;
 				var newPos;
 
-				var futureEditorHeight = caretYPosition + lineHeight;
-				if (caretYPosition < offsetY) {
-					newPos = caretYPosition;
-				} else if (futureEditorHeight > editorHeight + offsetY) {
-					newPos = futureEditorHeight - editorHeight + halfLineHeight;
+		
+				if(caretYPosition > editorHeight ) {
+					newPos = offsetY + caretYPosition - editorHeight;
+				} else if ( caretYPosition > 0 && caretYPosition < 50 ) {
+					newPos = offsetY - 50 + caretYPosition;
 				}
 
 				if (newPos) {
